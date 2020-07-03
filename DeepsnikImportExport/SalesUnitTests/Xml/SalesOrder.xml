@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SalesOrder>
+      <Id>123</Id>
+      <AccountReference>JOE001</AccountReference>
+      <SalesOrderDate>2014-01-01T00:00:00</SalesOrderDate>
+      <VatInclusive>true</VatInclusive>
+      <SalesOrderAddress>
+        <Title>Mr</Title>
+        <Forename>Joe</Forename>
+        <Surname>Harrison</Surname>
+        <Company>Deepsnik Software Limited</Company>
+        <Address1>Business Centre</Address1>
+        <Address2>Renishaw</Address2>
+        <Town>Sheffield</Town>
+        <Postcode>S21 3WY</Postcode>
+        <County>South Yorkshire</County>
+      </SalesOrderAddress>
+      <SalesOrderDeliveryAddress>
+        <Title>Mr</Title>
+        <Forename>Joe</Forename>
+        <Surname>Harrison</Surname>
+        <Company>Deepsnik Software Limited</Company>
+        <Address1>Business Centre</Address1>
+        <Address2>Renishaw</Address2>
+        <Town>Sheffield</Town>
+        <Postcode>S21 3WY</Postcode>
+        <County>South Yorkshire</County>
+      </SalesOrderDeliveryAddress>
+      <SalesOrderItems>
+        <Item>
+          <Sku>TEST01</Sku>
+          <QtyOrdered>1</QtyOrdered>
+          <UnitPrice>200</UnitPrice>
+        </Item>
+	<Item>
+          <Sku>TEST02</Sku>
+          <QtyOrdered>1</QtyOrdered>
+          <UnitPrice>300</UnitPrice>
+        </Item>
+      </SalesOrderItems>
+</SalesOrder>

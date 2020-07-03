@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WrYDhMqjsCGFoc2DSMRd+sS0F/e/Q36UBWnhPxdup2HuYme4S+m+lycZncVak4gcFGP6TdscnnvEZBP0rSQ4HA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dan\\source\\repos\\DeepsnikImportExport\\DataLayer\\DataLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

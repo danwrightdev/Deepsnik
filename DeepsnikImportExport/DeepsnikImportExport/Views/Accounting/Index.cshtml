@@ -1,0 +1,34 @@
+﻿@model List<BusinessLayer.Models.SalesOrderBaseModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Deepsnik Accounting</h1>
+
+<h3>Current Sales</h3>
+
+<Table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Account Reference</th>
+            <th scope="col">Sales Order Date</th>
+            <th scope="col" style="text-align:center">Vat Inclusive</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.AccountReference</td>
+                <td>@order.SalesOrderDate.ToString("dd/MM/yyyy mm:HH:ss")</td>
+                <td><input type="checkbox" asp-for="@order.VatInclusive" class="form-control" readonly="@(true)" /></td>
+                <td><form><button class="btn btn-primary" asp-controller="Accounting" asp-action="ViewSalesOrder" asp-route-Id="@order.Id">View Order</button></form></td>
+            </tr>
+        }
+
+    </tbody>
+</Table>
+

@@ -1,0 +1,27 @@
+﻿@model bool?
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Deepsnik Data Import</h1>
+
+<form method="post" enctype="multipart/form-data" asp-controller="FileUpload" asp-action="Index">
+    <div class="form-group">
+        <div class="col-md-10">
+            <p>Load XML File:</p>
+            <input type="file" name="files" multiple accept="text/xml" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" class="btn btn-success" value="Upload Sales Order" />
+        </div>
+    </div>
+</form>
+
+@if(Model == true)
+{
+    <div class="alert alert-success" role="alert">
+        Data uploaded to Accounts Successfully
+    </div>
+}

@@ -1,0 +1,33 @@
+﻿@model BusinessLayer.Models.AddressModel
+
+@{
+    var isReadonly = ViewData["IsReadOnly"];
+}
+
+<label>Title:</label>
+<span>@Model.Title</span>
+<br />
+<label>Forename:</label>
+<span>@Model.Forename</span>
+<br />
+<label>Surname:</label>
+<span>@Model.Surname</span>
+<br />
+<label>Company:</label>
+<span>@Model.Company</span>
+<br />
+<label>Address 1:</label>
+<span>@Model.Address1</span>
+<br />
+<label>Address 2:</label>
+<span>@Model.Address2</span>
+<br />
+<label>Town:</label>
+<span>@Model.Town</span>
+<br />
+<label>Postcode:</label>
+<span>@Model.Postcode</span>
+<br />
+<label>County:</label>
+<span>@Model.County</span>
+<br />

@@ -1,0 +1,108 @@
+﻿@model BusinessLayer.Models.SalesOrderModel
+@{
+    ViewData["Title"] = "View Sales Order";
+}
+
+
+<style>
+    label {
+        float: left;
+        width: 30%
+    }
+
+    span {
+        display: block;
+        overflow: hidden;
+        padding: 0 4px 0 6px
+    }
+
+    h6 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .NoPaddingLeft {
+        padding-left: 0px;
+    }
+
+    .NoPaddingRight {
+        padding-right: 0px;
+    }
+</style>
+
+<h1>Deepsnik Accounting</h1>
+
+<form>
+    <div class="container">
+        <div class="form-group">
+            <div class="card">
+                <div class="card-body">
+                    <h6>Sales Detail</h6><br />
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label>Id:</label>
+                            <span>@Model.Id</span><br />
+                            <label>Account Reference:</label>
+                            <span>@Model.AccountReference</span><br />
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Sales Order Date:</label>
+                            <span>@Model.SalesOrderDate.ToString("dd/MMM/yyyy mm:HH:ss")</span><br />
+                            <label>Vat Inclusive:</label>
+                            <span style="width:30px"><input type="checkbox" asp-for="VatInclusive" class="form-control" readonly="@(true)" /></span><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 NoPaddingRight">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <h6>Sales Order Address</h6><br />
+                                <partial name="_Address" for="SalesOrderAddress" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 NoPaddingLeft">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <h6>Sales Delivery Address</h6><br />
+                                <partial name="_Address" for="SalesOrderDeliveryAddress" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h6>Order Items</h6>
+                <div class="row">
+                    <Table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sku</th>
+                                <th scope="col">Qty Ordered</th>
+                                <th scope="col">Unit Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in Model.SalesOrderItems)
+                            {
+                                <tr>
+                                    <td>@order.Sku</td>
+                                    <td>@order.QtyOrdered</td>
+                                    <td>@order.UnitPrice</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </Table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
